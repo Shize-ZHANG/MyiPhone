@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EF0C19272CF8B3DB0002E1F7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EF0C19262CF8B3DB0002E1F7 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		EF0C18D62CF8914B0002E1F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		EF0C18C52CF891470002E1F7 /* MyiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0C18D52CF8914B0002E1F7 /* MyiPhoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyiPhoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0C18DF2CF8914B0002E1F7 /* MyiPhoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyiPhoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0C19262CF8B3DB0002E1F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		EF0C18BC2CF891470002E1F7 = {
 			isa = PBXGroup;
 			children = (
+				EF0C19262CF8B3DB0002E1F7 /* README.md */,
 				EF0C18C72CF891470002E1F7 /* MyiPhone */,
 				EF0C18D82CF8914B0002E1F7 /* MyiPhoneTests */,
 				EF0C18E22CF8914B0002E1F7 /* MyiPhoneUITests */,
@@ -212,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF0C19272CF8B3DB0002E1F7 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
