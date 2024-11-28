@@ -16,13 +16,13 @@ struct ContentView: View {
         VStack {
             Spacer()
             
-            // 星空视图
+            // StarView
             OptimizedStarView(starCount: starCount, starColor: starColor)
                 .frame(height: 500)
             
             Spacer()
             
-            // 控制面板
+            // ControlPanel
             VStack(spacing: 20) {
                 HStack {
                     Text("Star Count: \(starCount)")
@@ -60,7 +60,7 @@ struct OptimizedStarView: UIViewRepresentable {
         sceneView.allowsCameraControl = true
         sceneView.backgroundColor = UIColor.black
         
-        // 初始创建星星
+        // init stars
         createStars(in: sceneView.scene!)
         return sceneView
     }
@@ -68,17 +68,17 @@ struct OptimizedStarView: UIViewRepresentable {
     func updateUIView(_ uiView: SCNView, context: Context) {
         guard let scene = uiView.scene else { return }
 
-        // 更新星星数量
+        // update numbers of stars
         let currentStarCount = scene.rootNode.childNodes.count
         if currentStarCount != starCount {
             adjustStarNodes(in: scene)
         }
 
-        // 更新星星颜色
+        // update color
         updateStarColors(in: scene)
     }
     
-    // 创建指定数量的星星
+    // create stars
     private func createStars(in scene: SCNScene) {
         for _ in 0..<starCount {
             let star = SCNNode(geometry: SCNSphere(radius: 0.05))
@@ -90,7 +90,7 @@ struct OptimizedStarView: UIViewRepresentable {
             )
             scene.rootNode.addChildNode(star)
             
-            // 添加闪烁动画
+            // add flashs
             let flash = CABasicAnimation(keyPath: "opacity")
             flash.fromValue = 0.3
             flash.toValue = 1.0
@@ -101,11 +101,10 @@ struct OptimizedStarView: UIViewRepresentable {
         }
     }
     
-    // 调整星星节点数量（增/减）
     private func adjustStarNodes(in scene: SCNScene) {
         let currentStarCount = scene.rootNode.childNodes.count
         if currentStarCount < starCount {
-            // 添加额外的星星
+            // add extra stars
             for _ in 0..<(starCount - currentStarCount) {
                 let star = SCNNode(geometry: SCNSphere(radius: 0.05))
                 star.geometry?.firstMaterial?.diffuse.contents = UIColor(starColor)
@@ -116,7 +115,7 @@ struct OptimizedStarView: UIViewRepresentable {
                 )
                 scene.rootNode.addChildNode(star)
                 
-                // 添加闪烁动画
+                // add flash
                 let flash = CABasicAnimation(keyPath: "opacity")
                 flash.fromValue = 0.3
                 flash.toValue = 1.0
@@ -126,13 +125,12 @@ struct OptimizedStarView: UIViewRepresentable {
                 star.addAnimation(flash, forKey: nil)
             }
         } else if currentStarCount > starCount {
-            // 删除多余的星星
+            // remove additional stars
             let extraStars = scene.rootNode.childNodes.prefix(currentStarCount - starCount)
             extraStars.forEach { $0.removeFromParentNode() }
         }
     }
 
-    // 更新星星颜色
     private func updateStarColors(in scene: SCNScene) {
         for node in scene.rootNode.childNodes {
             node.geometry?.firstMaterial?.diffuse.contents = UIColor(starColor)
