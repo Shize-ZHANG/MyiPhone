@@ -4,6 +4,15 @@
 
 ---
 
+## Table of Contents
+
+1. [Features](#features)
+2. [Prerequisites](#prerequisites)
+3. [Setup](#setup)
+4. [Usage](#usage)
+
+---
+
 ## Features
 
 - **Dynamic Starfield:** Explore a 3D starfield where stars randomly flash and twinkle.
@@ -17,9 +26,9 @@
 
 ## Prerequisites
 
-- **macOS:** Monterey (12.0) or later
-- **Xcode:** Version 15 or later
-- **iOS Simulator or Device:** iOS 17.0 or later
+- **macOS:** Monterey (12.0) or later  
+- **Xcode:** Version 15 or later  
+- **iOS Simulator or Device:** iOS 17.0 or later  
 - **Swift:** 5.9+
 
 ---
@@ -28,7 +37,7 @@
 
 1. Clone the repository or download the source code:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:Shize-ZHANG/MyiPhone.git
    ```
 2. Open the project in Xcode:
    ```bash
